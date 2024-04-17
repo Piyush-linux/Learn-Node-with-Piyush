@@ -73,4 +73,6 @@ dotenv.config({
 + Middleware
   - app use: cors, json, urlencoded, cookieParser
 + Routing
-  [/path] - [middle] - [ (err,req,res,next)=>res.send ]
+  [/path] - [middleware] - [ (err,req,res,next) => res.send ]
++ Nodejs API Error (Error Class)
+  - 
