@@ -1,8 +1,10 @@
 # Setup
 
 ## How to understand backend
+
 1. Schema : models
 2. API: Swagger API, Routes
+
 ```
 
 - init: git(.gitignore) , npm(package.json) , README.md > gitignore generator
@@ -23,20 +25,22 @@
 
 - ENV Setup for type:modules
 ```
+
 // package.json
 {
-	"scripts":{
-		"dev":"nodemon -r dotenv/config --experimental-json-modules src/index.js"
-	}
+"scripts":{
+"dev":"nodemon -r dotenv/config --experimental-json-modules src/index.js"
+}
 }
 
 // index.js
 import dotenv from "dotenv";
 
 dotenv.config({
-    path:"./env"
+path:"./env"
 })
-```
+
+````
 
 
 
@@ -49,16 +53,16 @@ dotenv.config({
 ```json
 "type": "module",
 "scripts":{
-	"dev":"node src/index.js",
-	"start":"nodemon src/index.js"
+  "dev":"node src/index.js",
+  "start":"nodemon src/index.js"
 }
 
-```
+````
 
 ```yml
 - public/temp.gitkeep
-	- /temp : store images on server for temporary before uploading to cloudinary
-	- .gitkeep : to tell get to store these empty dir in Github
+  - /temp : store images on server for temporary before uploading to cloudinary
+  - .gitkeep : to tell get to store these empty dir in Github
 - .env & .env.sample : `.env.sample` is a sample of env
 - src: Index.js
 - controller:
@@ -70,9 +74,42 @@ dotenv.config({
 -
 ```
 
-+ Middleware
+- Middleware
   - app use: cors, json, urlencoded, cookieParser
-+ Routing
+- Routing
   [/path] - [middleware] - [ (err,req,res,next) => res.send ]
-+ Nodejs API Error (Error Class)
-  - 
+- ## Nodejs API Error (Error Class)
+
+---
+
+### formatting: prettierrc
+
+.prettierrc
+
+```sh
+yarn prettier . check
+```
+
+### MongoDB Connect & Server listen
+
+/db , app.js , index.js
+
+### Data Modelling
+
+/models
+
+### API Handeling
+
+/utils
+
+### JWT & Bcrypt
+
+- Model: User , Video
+- Pagination
+
+* MongoDB Aggragation
+
+  - `yarn add mongoose-aggregate-paginate-v2`
+  - mongoose middleware
+
+- Password Haneling
